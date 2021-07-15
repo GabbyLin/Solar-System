@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>AR demo</title>
+
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1f00d0beadf87bad7d275c174616e048f8b573fc/dist/aframe-master.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/protyze/aframe-curve-component/dist/aframe-curve-component.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/gh/protyze/aframe-alongpath-component/dist/aframe-alongpath-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/IdeaSpaceVR/aframe-particle-system-component/dist/aframe-particle-system-component.min.js"></script>
+
+    <script src="js/utils.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #000000">
+        <!-- <a-sky src="./img/galaxy.jpg"></a-sky> -->
+
+        <!--galaxy-->
+        <a-entity position="0 0 0" particle-system="
+                preset: dust;
+                positionSpread:100 100 100;
+                maxAge:2;
+                type:3;
+                velocityValue:0 0 1;
+                ccelerationValue:0 0 1;
+                particleCount:100;
+                color:#d2d2d2,#0041b0,#ddb976,#fbfbfb,#000000;
+                size:5;
+                "></a-entity>
+
+        
+
+        <a-entity rotation="-30 0 0">
+            <!--neptune-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 44075">
+                <a-sphere position="1 0 -44" radius="2" color="#0094e4"></a-sphere>
+            </a-entity>
+            
+            <!--uranus-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 35145">
+                <a-sphere position="1 0 -40" radius="1.7" color="#54adc1"></a-sphere>
+            </a-entity>
+            
+            <!--saturn-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 24700">
+                <a-sphere position="1 0 -34" radius="2.7" color="#b199c9"></a-sphere>
+            </a-entity>
+            
+            <!--jupiter-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 18310">
+                <a-sphere position="1 0 -27" radius="3" color="#aa9183"></a-sphere>
+            </a-entity>
+            
+            <!--mars-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 9915">
+                <a-sphere position="1 0 -22" radius="1.2" color="#de0909"></a-sphere>
+            </a-entity>
+            
+            <!--earth-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 8035">
+                <a-sphere position="1 0 -18" radius="1" color="#00e0ff"></a-sphere>
+            </a-entity>
+            
+            <!--venus-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 6830">
+                <a-sphere position="1 0 -14" radius="0.7" color="#f7e560"></a-sphere>
+            </a-entity>
+            
+            <!--mercury-->
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+                <a-sphere position="0 0 -12" radius="0.5" color="#dedede"></a-sphere>
+            </a-entity>
+            
+            <!--solar-->
+            <a-sphere position="0 0 0" radius="9" color="#fe6e00"></a-sphere>
+
+            <!--orbit-->
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:12"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:14"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:18"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:22"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:27"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:34"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:40"></a-entity>
+            <a-entity position="0 0 0" rotation="90 0 0" extra="radius:44"></a-entity>
+        </a-entity>
+
+        <a-camera position="0 0 90" fov="10000"></a-camera>
+
+    </a-scene>
+
+    <div class="fixed hidden" id="menufixed">
+        <a class="btn" id="color1" href="javascript:">Introduction</a>
+        <a class="btn" id="color2" href="javascript:">Guideline</a>
+        <a class="btn" id="color3" href="javascript:">Cooperation</a>
+    </div>
+    
+</body>
+
+</html>
